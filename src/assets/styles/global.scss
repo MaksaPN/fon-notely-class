@@ -1,0 +1,36 @@
+
+@import 'variables';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body {
+  // font-family: Roboto, sans-serif;
+  font-size: 14px;
+  margin: 0;
+  background-color: $body-background;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+[role=button] {
+  cursor: pointer;
+}
+
+a {
+  color: $gray;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:active,
+  &:focus,
+  &:hover,
+  &:visited {
+    color: $gray;
+    text-decoration: none;
+  }
+
+  &:hover {
+    color: $gray-hover;
+  }
+}
