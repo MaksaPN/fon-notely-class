@@ -1,1 +1,10 @@
-<h1>Notes</h1>
+<div class="notes-wrapper">
+  <fon-note
+    *ngFor="let note of notes" [note]="note"
+    (editClicked)="onEditClicked($event)"
+    (deleteClicked)="onDeleteClicked($event)">
+  </fon-note>
+</div>
+
+<router-outlet name="note"></router-outlet>
+

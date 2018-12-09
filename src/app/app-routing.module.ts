@@ -3,12 +3,18 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AboutComponent } from './components/about/about.component';
 import { NotesComponent } from './components/notes/notes.component';
+import { NoteDetailsComponent } from './components/note-details/note-details.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'notes', pathMatch: 'full' },
-  { path: 'notes', component: NotesComponent },
+  {
+    path: 'notes', component: NotesComponent, children: [
+      { path: ':noteId', component: NoteDetailsComponent, outlet: 'note' },
+    ]
+  },
   { path: 'about', component: AboutComponent }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
